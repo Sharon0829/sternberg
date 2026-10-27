@@ -1,0 +1,13 @@
+cond,condCN,load,memSet,probe,corrAns,image
+neg,负性,3,Z H C,Z,f,neg/Fire_6.jpg
+neu,中性,6,J N V W X Z,J,f,neu/Snow_5.jpg
+pos,正性,3,M X N,M,f,pos/Fireworks_2.jpg
+none,无图片,6,Q G H R S M,Q,f,blank.png
+neg,负性,3,G T K,G,f,neg/Destruction_8.jpg
+neu,中性,6,F X H Q T R,F,f,neu/Bar_2.jpg
+pos,正性,3,N G P,F,j,pos/Beach_6.jpg
+none,无图片,6,V Z B M T K,W,j,blank.png
+neg,负性,3,B J C,Q,j,neg/Fire_5.jpg
+neu,中性,6,J S T M F R,D,j,neu/Wedding_12.jpg
+pos,正性,3,S K M,W,j,pos/Lake_8.jpg
+none,无图片,6,S M N Y B T,L,j,blank.png

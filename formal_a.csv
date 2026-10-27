@@ -1,0 +1,97 @@
+cond,condCN,load,memSet,probe,corrAns,image
+neg,负性,3,L M X,Z,j,neg/Explosion_6.jpg
+pos,正性,6,J C Q Z K M,C,f,pos/Fireworks_7.jpg
+neu,中性,6,F W X H D M,C,j,neu/Grass_1.jpg
+pos,正性,6,C M J Y K D,C,f,pos/Fireworks_2.jpg
+neu,中性,3,K F H,W,j,neu/Skijump_1.jpg
+none,无图片,3,M B K,T,j,blank.png
+none,无图片,6,S N B D Z X,D,f,blank.png
+none,无图片,6,S H L R Z G,S,f,blank.png
+neu,中性,6,H G Q Z P K,K,f,neu/Grass_5.jpg
+none,无图片,3,K M J,L,j,blank.png
+none,无图片,6,X R H T J B,T,f,blank.png
+neg,负性,6,R D V F G Y,Q,j,neg/Explosion_1.jpg
+neg,负性,3,R F K,K,f,neg/Fire_6.jpg
+pos,正性,3,J Y Z,B,j,pos/Lake_10.jpg
+neu,中性,3,L B M,B,f,neu/Grass_6.jpg
+none,无图片,6,D N W T B F,H,j,blank.png
+neu,中性,3,M K G,Y,j,neu/House_1.jpg
+neg,负性,3,B Z T,B,f,neg/Soldiers_10.jpg
+pos,正性,6,T M C Q X Y,F,j,pos/Lake_12.jpg
+neg,负性,6,V L G N Z R,R,f,neg/Fire_10.jpg
+neu,中性,3,X K J,L,j,neu/Street_3.jpg
+neu,中性,6,R T S G J H,Y,j,neu/Snow_5.jpg
+neg,负性,6,H R Z Y P N,T,j,neg/Car_crash_2.jpg
+neg,负性,6,V M P Z Y R,X,j,neg/Explosion_5.jpg
+pos,正性,6,P K T S W Q,W,f,pos/Lake_1.jpg
+pos,正性,6,S V F G L D,T,j,pos/Galaxy_2.jpg
+none,无图片,6,M K F L T N,D,j,blank.png
+neu,中性,3,S B Z,S,f,neu/Wedding_12.jpg
+pos,正性,3,V M C,X,j,pos/Lake_15.jpg
+pos,正性,6,M R F L C X,F,f,pos/Fireworks_5.jpg
+neg,负性,3,V Z C,L,j,neg/Fire_9.jpg
+neg,负性,3,G C Z,G,f,neg/Destruction_6.jpg
+neg,负性,3,N X P,F,j,neg/War_5.jpg
+neu,中性,3,B D C,D,f,neu/Bar_1.jpg
+none,无图片,6,N K T Q R G,P,j,blank.png
+pos,正性,3,T H D,T,f,pos/Lake_16.jpg
+pos,正性,3,V J H,G,j,pos/Fireworks_3.jpg
+pos,正性,3,T Q H,T,f,pos/Fireworks_6.jpg
+none,无图片,3,Q M Z,K,j,blank.png
+neu,中性,3,V C X,C,f,neu/Building_2.jpg
+neu,中性,3,S Z V,L,j,neu/Moon_1.jpg
+none,无图片,3,F K M,K,f,blank.png
+none,无图片,3,R D T,R,f,blank.png
+none,无图片,6,S G R Q Y Z,N,j,blank.png
+none,无图片,3,C D W,K,j,blank.png
+none,无图片,6,K N Q F X H,L,j,blank.png
+neu,中性,3,R D F,H,j,neu/Grass_2.jpg
+neu,中性,3,W Q H,H,f,neu/Camping_10.jpg
+pos,正性,6,L G M H R T,J,j,pos/Beach_6.jpg
+neg,负性,6,G K D V Y W,D,f,neg/Explosion_2.jpg
+neu,中性,6,D G F R C T,J,j,neu/Street_4.jpg
+pos,正性,3,C R Y,R,f,pos/Lake_14.jpg
+neu,中性,6,D W V Y K R,B,j,neu/Grass_3.jpg
+pos,正性,6,Z K C L N X,S,j,pos/Fireworks_1.jpg
+neu,中性,6,S L K Z H R,H,f,neu/Neutral_pose_2.jpg
+neu,中性,6,P Q T K H F,P,f,neu/Sky_1.jpg
+neg,负性,6,Z W Q P J C,J,f,neg/Cemetery_5.jpg
+neu,中性,6,Q D H Z K S,Y,j,neu/Cold_5.jpg
+neg,负性,6,H K V B J N,H,f,neg/Fire_5.jpg
+none,无图片,3,F H C,H,f,blank.png
+none,无图片,6,G Y R P D C,R,f,blank.png
+pos,正性,3,D Y W,F,j,pos/Beach_1.jpg
+neg,负性,6,G F P Q Y B,P,f,neg/Fire_7.jpg
+pos,正性,3,T C M,J,j,pos/Beach_7.jpg
+none,无图片,3,Q K X,X,f,blank.png
+none,无图片,6,H B J D F Y,B,f,blank.png
+neg,负性,3,L Q H,Q,f,neg/Explosion_3.jpg
+neg,负性,3,R G L,R,f,neg/Fire_11.jpg
+pos,正性,6,H J F W G S,R,j,pos/Lake_2.jpg
+pos,正性,6,D Y M W V G,G,f,pos/Lake_8.jpg
+neg,负性,3,R Z W,Z,f,neg/Flood_3.jpg
+pos,正性,3,J Q M,M,f,pos/Galaxy_7.jpg
+neg,负性,6,S R X H T Z,Q,j,neg/War_2.jpg
+neu,中性,6,W N B H M V,C,j,neu/Grass_4.jpg
+neu,中性,6,N D H B F S,D,f,neu/Grass_7.jpg
+none,无图片,6,X V K H C P,F,j,blank.png
+none,无图片,3,G K W,G,f,blank.png
+neg,负性,3,Q X Z,N,j,neg/Tornado_1.jpg
+pos,正性,3,B P W,P,f,pos/Rainbow_1.jpg
+pos,正性,3,D M V,Y,j,pos/Rainbow_2.jpg
+pos,正性,3,V Y Q,V,f,pos/Sunset_4.jpg
+pos,正性,6,J V N W C D,C,f,pos/Beach_8.jpg
+neu,中性,6,V J Z W M Q,M,f,neu/Street_2.jpg
+none,无图片,3,P Q L,F,j,blank.png
+neg,负性,6,M F S T X H,N,j,neg/Volcano_2.jpg
+neu,中性,3,M B D,D,f,neu/Snow_1.jpg
+neu,中性,6,Y D L W C N,D,f,neu/Bored_pose_6.jpg
+pos,正性,6,V T G X W D,J,j,pos/Lake_9.jpg
+neg,负性,3,N M J,C,j,neg/Car_crash_3.jpg
+none,无图片,6,V Z F W T N,T,f,blank.png
+neg,负性,6,M W H T X G,G,f,neg/Destruction_8.jpg
+none,无图片,3,G K N,N,f,blank.png
+neg,负性,6,K C J V P H,Z,j,neg/Flood_1.jpg
+neu,中性,3,P L Z,S,j,neu/Sailing_3.jpg
+neg,负性,3,B T G,Z,j,neg/Dirt_1.jpg
+none,无图片,3,D R H,Y,j,blank.png
