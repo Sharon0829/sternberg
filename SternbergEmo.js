@@ -19,6 +19,28 @@ let expInfo = {
 };
 let PILOTING = util.getUrlParameters().has('__pilotToken');
 
+// --- Variable declarations (added manually; the export omitted these, causing
+// "Can't find variable" ReferenceErrors in strict ES-module mode) ---
+let currentLoop, frameDur, practice_loop, formal_a_loop, formal_b_loop, level;
+let globalClock, routineTimer;
+let consentClock, consent_text, consent_key;
+let subjectClock, subject_text, subject_key;
+let instructionsClock, instr_text, instr_key;
+let trialClock, fixation, memSetStim, img, probeStim, key_resp;
+let feedbackClock, fb_text;
+let itiClock, iti_blank;
+let restClock, break_text;
+let endClock, end_text, end_key;
+let t, frameN, frameRemains, continueRoutine, routineForceEnded;
+let consentMaxDuration, consentMaxDurationReached, consentComponents, _consent_key_allKeys;
+let subjectMaxDuration, subjectMaxDurationReached, subjectComponents, _subject_key_allKeys;
+let instructionsMaxDuration, instructionsMaxDurationReached, instructionsComponents, _instr_key_allKeys;
+let trialMaxDuration, trialMaxDurationReached, trialComponents, _key_resp_allKeys;
+let feedbackMaxDuration, feedbackMaxDurationReached, feedbackComponents;
+let itiMaxDuration, itiMaxDurationReached, itiComponents;
+let restMaxDuration, restMaxDurationReached, restComponents;
+let endMaxDuration, endMaxDurationReached, endComponents, _end_key_allKeys;
+
 // Start code blocks for 'Before Experiment'
 // init psychoJS:
 const psychoJS = new PsychoJS({
