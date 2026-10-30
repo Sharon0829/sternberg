@@ -177,7 +177,7 @@ psychoJS.start({
     {'name': 'neg/War_8.jpg', 'path': 'neg/War_8.jpg'},
     {'name': 'neu/Bar_1.jpg', 'path': 'neu/Bar_1.jpg'},
     {'name': 'neu/Bar_2.jpg', 'path': 'neu/Bar_2.jpg'},
-    {'name': 'neu/Bored_pose_6.jpg', 'path': 'neu/Bored_pose_6.jpg'},
+    {'name': 'neu/Waterfall_1.jpg', 'path': 'neu/Waterfall_1.jpg'},
     {'name': 'neu/Building_1.jpg', 'path': 'neu/Building_1.jpg'},
     {'name': 'neu/Building_2.jpg', 'path': 'neu/Building_2.jpg'},
     {'name': 'neu/Camping_10.jpg', 'path': 'neu/Camping_10.jpg'},
