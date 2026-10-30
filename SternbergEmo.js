@@ -40,6 +40,10 @@ let feedbackMaxDuration, feedbackMaxDurationReached, feedbackComponents;
 let itiMaxDuration, itiMaxDurationReached, itiComponents;
 let restMaxDuration, restMaxDurationReached, restComponents;
 let endMaxDuration, endMaxDurationReached, endComponents, _end_key_allKeys;
+let catchFClock, catchF_text, catchF_key;
+let catchJClock, catchJ_text, catchJ_key;
+let catchFMaxDuration, catchFMaxDurationReached, catchFComponents, _catchF_key_allKeys;
+let catchJMaxDuration, catchJMaxDurationReached, catchJComponents, _catchJ_key_allKeys;
 
 // Start code blocks for 'Before Experiment'
 // init psychoJS:
@@ -91,7 +95,9 @@ flowScheduler.add(formal_a_loopLoopBegin(formal_a_loopLoopScheduler));
 flowScheduler.add(formal_a_loopLoopScheduler);
 flowScheduler.add(formal_a_loopLoopEnd);
 
-
+flowScheduler.add(catchFRoutineBegin());
+flowScheduler.add(catchFRoutineEachFrame());
+flowScheduler.add(catchFRoutineEnd());
 
 flowScheduler.add(restRoutineBegin());
 flowScheduler.add(restRoutineEachFrame());
@@ -101,7 +107,9 @@ flowScheduler.add(formal_b_loopLoopBegin(formal_b_loopLoopScheduler));
 flowScheduler.add(formal_b_loopLoopScheduler);
 flowScheduler.add(formal_b_loopLoopEnd);
 
-
+flowScheduler.add(catchJRoutineBegin());
+flowScheduler.add(catchJRoutineEachFrame());
+flowScheduler.add(catchJRoutineEnd());
 
 flowScheduler.add(endRoutineBegin());
 flowScheduler.add(endRoutineEachFrame());
@@ -395,7 +403,39 @@ async function experimentInit() {
   });
   
   end_key = new core.Keyboard({psychoJS: psychoJS, clock: new util.Clock(), waitForStart: true});
-  
+
+  // Initialize components for Routine "catchF" (attention check: press F)
+  catchFClock = new util.Clock();
+  catchF_text = new visual.TextStim({
+    win: psychoJS.window,
+    name: 'catchF_text',
+    text: '这道题请按 F 键。',
+    font: 'Songti SC',
+    units: undefined,
+    pos: [0, 0], draggable: false, height: 0.06,  wrapWidth: undefined, ori: 0.0,
+    languageStyle: 'LTR',
+    color: new util.Color('white'),  opacity: 1.0,
+    depth: 0.0
+  });
+
+  catchF_key = new core.Keyboard({psychoJS: psychoJS, clock: new util.Clock(), waitForStart: true});
+
+  // Initialize components for Routine "catchJ" (attention check: press J)
+  catchJClock = new util.Clock();
+  catchJ_text = new visual.TextStim({
+    win: psychoJS.window,
+    name: 'catchJ_text',
+    text: '这道题请按 J 键。',
+    font: 'Songti SC',
+    units: undefined,
+    pos: [0, 0], draggable: false, height: 0.06,  wrapWidth: undefined, ori: 0.0,
+    languageStyle: 'LTR',
+    color: new util.Color('white'),  opacity: 1.0,
+    depth: 0.0
+  });
+
+  catchJ_key = new core.Keyboard({psychoJS: psychoJS, clock: new util.Clock(), waitForStart: true});
+
   // Create some handy timers
   globalClock = new util.Clock();  // to track the time since experiment started
   routineTimer = new util.CountdownTimer();  // to track time remaining of each (non-slip) routine
@@ -1753,6 +1793,272 @@ function trialRoutineEachFrame() {
     }
   }
   
+function catchFRoutineBegin(snapshot) {
+  return async function () {
+    TrialHandler.fromSnapshot(snapshot); // ensure that .thisN vals are up to date
+
+    //--- Prepare to start Routine 'catchF' ---
+    t = 0;
+    frameN = -1;
+    continueRoutine = true; // until we're told otherwise
+    routineForceEnded = false;
+    catchFClock.reset();
+    routineTimer.reset();
+    catchFMaxDurationReached = false;
+    // update component parameters for each repeat
+    catchF_key.keys = undefined;
+    catchF_key.rt = undefined;
+    catchF_key.corr = undefined;
+    _catchF_key_allKeys = [];
+    psychoJS.experiment.addData('catchF.started', globalClock.getTime());
+    catchFMaxDuration = null;
+    // keep track of which components have finished
+    catchFComponents = [];
+    catchFComponents.push(catchF_text);
+    catchFComponents.push(catchF_key);
+
+    for (const thisComponent of catchFComponents)
+      if ('status' in thisComponent)
+        thisComponent.status = PsychoJS.Status.NOT_STARTED;
+    return Scheduler.Event.NEXT;
+  };
+}
+
+function catchFRoutineEachFrame() {
+  return async function () {
+    //--- Loop for each frame of Routine 'catchF' ---
+    t = catchFClock.getTime();
+    frameN = frameN + 1;// number of completed frames (so 0 is the first frame)
+
+    // *catchF_text* updates
+    if (t >= 0 && catchF_text.status === PsychoJS.Status.NOT_STARTED) {
+      catchF_text.tStart = t;  // (not accounting for frame time here)
+      catchF_text.frameNStart = frameN;  // exact frame index
+      catchF_text.setAutoDraw(true);
+    }
+
+    if (catchF_text.status === PsychoJS.Status.STARTED) {
+    }
+
+    // *catchF_key* updates
+    if (t >= 0 && catchF_key.status === PsychoJS.Status.NOT_STARTED) {
+      catchF_key.tStart = t;  // (not accounting for frame time here)
+      catchF_key.frameNStart = frameN;  // exact frame index
+      psychoJS.window.callOnFlip(function() { catchF_key.clock.reset(); });  // t=0 on next screen flip
+      psychoJS.window.callOnFlip(function() { catchF_key.start(); }); // start on screen flip
+      psychoJS.window.callOnFlip(function() { catchF_key.clearEvents(); });
+    }
+
+    // if catchF_key is active this frame...
+    if (catchF_key.status === PsychoJS.Status.STARTED) {
+      let theseKeys = catchF_key.getKeys({
+        keyList: ['f', 'j'],
+        waitRelease: false
+      });
+      _catchF_key_allKeys = _catchF_key_allKeys.concat(theseKeys);
+      if (_catchF_key_allKeys.length > 0) {
+        catchF_key.keys = _catchF_key_allKeys[0].name;  // just the first key pressed
+        catchF_key.rt = _catchF_key_allKeys[0].rt;
+        catchF_key.duration = _catchF_key_allKeys[0].duration;
+        catchF_key.corr = (catchF_key.keys === 'f') ? 1 : 0;
+        // a response ends the routine
+        continueRoutine = false;
+      }
+    }
+
+    // check for quit (typically the Esc key)
+    if (psychoJS.experiment.experimentEnded || psychoJS.eventManager.getKeys({keyList:['escape']}).length > 0) {
+      return quitPsychoJS('The [Escape] key was pressed. Goodbye!', false);
+    }
+
+    // check if the Routine should terminate
+    if (!continueRoutine) {  // a component has requested a forced-end of Routine
+      routineForceEnded = true;
+      return Scheduler.Event.NEXT;
+    }
+
+    continueRoutine = false;  // reverts to True if at least one component still running
+    for (const thisComponent of catchFComponents)
+      if ('status' in thisComponent && thisComponent.status !== PsychoJS.Status.FINISHED) {
+        continueRoutine = true;
+        break;
+      }
+
+    // refresh the screen if continuing
+    if (continueRoutine) {
+      return Scheduler.Event.FLIP_REPEAT;
+    } else {
+      return Scheduler.Event.NEXT;
+    }
+  };
+}
+
+function catchFRoutineEnd(snapshot) {
+  return async function () {
+    //--- Ending Routine 'catchF' ---
+    for (const thisComponent of catchFComponents) {
+      if (typeof thisComponent.setAutoDraw === 'function') {
+        thisComponent.setAutoDraw(false);
+      }
+    }
+    psychoJS.experiment.addData('catchF.stopped', globalClock.getTime());
+    // update the trial handler
+    if (currentLoop instanceof MultiStairHandler) {
+      currentLoop.addResponse(catchF_key.corr, level);
+    }
+    psychoJS.experiment.addData('catchF_key.keys', catchF_key.keys);
+    psychoJS.experiment.addData('catchF_key.corr', catchF_key.corr);
+    if (typeof catchF_key.keys !== 'undefined') {  // we had a response
+        psychoJS.experiment.addData('catchF_key.rt', catchF_key.rt);
+        psychoJS.experiment.addData('catchF_key.duration', catchF_key.duration);
+        routineTimer.reset();
+        }
+
+    catchF_key.stop();
+    // the Routine "catchF" was not non-slip safe, so reset the non-slip timer
+    routineTimer.reset();
+
+    // Routines running outside a loop should always advance the datafile row
+    if (currentLoop === psychoJS.experiment) {
+      psychoJS.experiment.nextEntry(snapshot);
+    }
+    return Scheduler.Event.NEXT;
+  };
+}
+
+function catchJRoutineBegin(snapshot) {
+  return async function () {
+    TrialHandler.fromSnapshot(snapshot); // ensure that .thisN vals are up to date
+
+    //--- Prepare to start Routine 'catchJ' ---
+    t = 0;
+    frameN = -1;
+    continueRoutine = true; // until we're told otherwise
+    routineForceEnded = false;
+    catchJClock.reset();
+    routineTimer.reset();
+    catchJMaxDurationReached = false;
+    // update component parameters for each repeat
+    catchJ_key.keys = undefined;
+    catchJ_key.rt = undefined;
+    catchJ_key.corr = undefined;
+    _catchJ_key_allKeys = [];
+    psychoJS.experiment.addData('catchJ.started', globalClock.getTime());
+    catchJMaxDuration = null;
+    // keep track of which components have finished
+    catchJComponents = [];
+    catchJComponents.push(catchJ_text);
+    catchJComponents.push(catchJ_key);
+
+    for (const thisComponent of catchJComponents)
+      if ('status' in thisComponent)
+        thisComponent.status = PsychoJS.Status.NOT_STARTED;
+    return Scheduler.Event.NEXT;
+  };
+}
+
+function catchJRoutineEachFrame() {
+  return async function () {
+    //--- Loop for each frame of Routine 'catchJ' ---
+    t = catchJClock.getTime();
+    frameN = frameN + 1;// number of completed frames (so 0 is the first frame)
+
+    // *catchJ_text* updates
+    if (t >= 0 && catchJ_text.status === PsychoJS.Status.NOT_STARTED) {
+      catchJ_text.tStart = t;  // (not accounting for frame time here)
+      catchJ_text.frameNStart = frameN;  // exact frame index
+      catchJ_text.setAutoDraw(true);
+    }
+
+    if (catchJ_text.status === PsychoJS.Status.STARTED) {
+    }
+
+    // *catchJ_key* updates
+    if (t >= 0 && catchJ_key.status === PsychoJS.Status.NOT_STARTED) {
+      catchJ_key.tStart = t;  // (not accounting for frame time here)
+      catchJ_key.frameNStart = frameN;  // exact frame index
+      psychoJS.window.callOnFlip(function() { catchJ_key.clock.reset(); });  // t=0 on next screen flip
+      psychoJS.window.callOnFlip(function() { catchJ_key.start(); }); // start on screen flip
+      psychoJS.window.callOnFlip(function() { catchJ_key.clearEvents(); });
+    }
+
+    // if catchJ_key is active this frame...
+    if (catchJ_key.status === PsychoJS.Status.STARTED) {
+      let theseKeys = catchJ_key.getKeys({
+        keyList: ['f', 'j'],
+        waitRelease: false
+      });
+      _catchJ_key_allKeys = _catchJ_key_allKeys.concat(theseKeys);
+      if (_catchJ_key_allKeys.length > 0) {
+        catchJ_key.keys = _catchJ_key_allKeys[0].name;  // just the first key pressed
+        catchJ_key.rt = _catchJ_key_allKeys[0].rt;
+        catchJ_key.duration = _catchJ_key_allKeys[0].duration;
+        catchJ_key.corr = (catchJ_key.keys === 'j') ? 1 : 0;
+        // a response ends the routine
+        continueRoutine = false;
+      }
+    }
+
+    // check for quit (typically the Esc key)
+    if (psychoJS.experiment.experimentEnded || psychoJS.eventManager.getKeys({keyList:['escape']}).length > 0) {
+      return quitPsychoJS('The [Escape] key was pressed. Goodbye!', false);
+    }
+
+    // check if the Routine should terminate
+    if (!continueRoutine) {  // a component has requested a forced-end of Routine
+      routineForceEnded = true;
+      return Scheduler.Event.NEXT;
+    }
+
+    continueRoutine = false;  // reverts to True if at least one component still running
+    for (const thisComponent of catchJComponents)
+      if ('status' in thisComponent && thisComponent.status !== PsychoJS.Status.FINISHED) {
+        continueRoutine = true;
+        break;
+      }
+
+    // refresh the screen if continuing
+    if (continueRoutine) {
+      return Scheduler.Event.FLIP_REPEAT;
+    } else {
+      return Scheduler.Event.NEXT;
+    }
+  };
+}
+
+function catchJRoutineEnd(snapshot) {
+  return async function () {
+    //--- Ending Routine 'catchJ' ---
+    for (const thisComponent of catchJComponents) {
+      if (typeof thisComponent.setAutoDraw === 'function') {
+        thisComponent.setAutoDraw(false);
+      }
+    }
+    psychoJS.experiment.addData('catchJ.stopped', globalClock.getTime());
+    // update the trial handler
+    if (currentLoop instanceof MultiStairHandler) {
+      currentLoop.addResponse(catchJ_key.corr, level);
+    }
+    psychoJS.experiment.addData('catchJ_key.keys', catchJ_key.keys);
+    psychoJS.experiment.addData('catchJ_key.corr', catchJ_key.corr);
+    if (typeof catchJ_key.keys !== 'undefined') {  // we had a response
+        psychoJS.experiment.addData('catchJ_key.rt', catchJ_key.rt);
+        psychoJS.experiment.addData('catchJ_key.duration', catchJ_key.duration);
+        routineTimer.reset();
+        }
+
+    catchJ_key.stop();
+    // the Routine "catchJ" was not non-slip safe, so reset the non-slip timer
+    routineTimer.reset();
+
+    // Routines running outside a loop should always advance the datafile row
+    if (currentLoop === psychoJS.experiment) {
+      psychoJS.experiment.nextEntry(snapshot);
+    }
+    return Scheduler.Event.NEXT;
+  };
+}
+
   function importConditions(currentLoop) {
     return async function () {
       psychoJS.importAttributes(currentLoop.getCurrentTrial());
