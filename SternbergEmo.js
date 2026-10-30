@@ -1900,6 +1900,13 @@ function catchFRoutineEachFrame() {
 
     if (catchF_text.status === PsychoJS.Status.STARTED) {
     }
+    frameRemains = 2.5 - psychoJS.window.monitorFramePeriod * 0.75;// most of one frame period left
+    if (catchF_text.status === PsychoJS.Status.STARTED && t >= frameRemains) {
+      catchF_text.tStop = t;  // not accounting for scr refresh
+      catchF_text.frameNStop = frameN;  // exact frame index
+      catchF_text.status = PsychoJS.Status.FINISHED;
+      catchF_text.setAutoDraw(false);
+    }
 
     // *catchF_key* updates
     if (t >= 0 && catchF_key.status === PsychoJS.Status.NOT_STARTED) {
@@ -1925,6 +1932,12 @@ function catchFRoutineEachFrame() {
         // a response ends the routine
         continueRoutine = false;
       }
+    }
+    frameRemains = 2.5 - psychoJS.window.monitorFramePeriod * 0.75;// most of one frame period left
+    if (catchF_key.status === PsychoJS.Status.STARTED && t >= frameRemains) {
+      catchF_key.tStop = t;  // not accounting for scr refresh
+      catchF_key.frameNStop = frameN;  // exact frame index
+      catchF_key.status = PsychoJS.Status.FINISHED;
     }
 
     // check for quit (typically the Esc key)
@@ -1963,6 +1976,10 @@ function catchFRoutineEnd(snapshot) {
       }
     }
     psychoJS.experiment.addData('catchF.stopped', globalClock.getTime());
+    // was no response the correct answer?!
+    if (catchF_key.keys === undefined) {
+      catchF_key.corr = 0;  // failed to respond within the time limit
+    }
     // update the trial handler
     if (currentLoop instanceof MultiStairHandler) {
       currentLoop.addResponse(catchF_key.corr, level);
@@ -2033,6 +2050,13 @@ function catchJRoutineEachFrame() {
 
     if (catchJ_text.status === PsychoJS.Status.STARTED) {
     }
+    frameRemains = 2.5 - psychoJS.window.monitorFramePeriod * 0.75;// most of one frame period left
+    if (catchJ_text.status === PsychoJS.Status.STARTED && t >= frameRemains) {
+      catchJ_text.tStop = t;  // not accounting for scr refresh
+      catchJ_text.frameNStop = frameN;  // exact frame index
+      catchJ_text.status = PsychoJS.Status.FINISHED;
+      catchJ_text.setAutoDraw(false);
+    }
 
     // *catchJ_key* updates
     if (t >= 0 && catchJ_key.status === PsychoJS.Status.NOT_STARTED) {
@@ -2058,6 +2082,12 @@ function catchJRoutineEachFrame() {
         // a response ends the routine
         continueRoutine = false;
       }
+    }
+    frameRemains = 2.5 - psychoJS.window.monitorFramePeriod * 0.75;// most of one frame period left
+    if (catchJ_key.status === PsychoJS.Status.STARTED && t >= frameRemains) {
+      catchJ_key.tStop = t;  // not accounting for scr refresh
+      catchJ_key.frameNStop = frameN;  // exact frame index
+      catchJ_key.status = PsychoJS.Status.FINISHED;
     }
 
     // check for quit (typically the Esc key)
@@ -2096,6 +2126,10 @@ function catchJRoutineEnd(snapshot) {
       }
     }
     psychoJS.experiment.addData('catchJ.stopped', globalClock.getTime());
+    // was no response the correct answer?!
+    if (catchJ_key.keys === undefined) {
+      catchJ_key.corr = 0;  // failed to respond within the time limit
+    }
     // update the trial handler
     if (currentLoop instanceof MultiStairHandler) {
       currentLoop.addResponse(catchJ_key.corr, level);
